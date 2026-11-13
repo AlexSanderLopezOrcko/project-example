@@ -27,4 +27,9 @@ describe('VolumeSlider Component', () => {
     render(<VolumeSlider label="Volumen" />);
     expect(screen.getByText('Volumen')).toBeInTheDocument();
   });
+
+  it('debe mostrar el slider en 80 desde el inicio con defaultValue={80}', () => {
+    render(<VolumeSlider label="Prueba" defaultValue={80} />);
+    expect(screen.getByRole('slider')).toHaveAttribute('aria-valuenow', '80');
+  });
 });
